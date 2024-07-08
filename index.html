@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="icon" href="https://i.pinimg.com/736x/ea/8d/11/ea8d11f1ffc6355b8a440106ce61d0f3.jpg">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <a href="./index.html">
+            <img src="https://i.pinimg.com/736x/ea/8d/11/ea8d11f1ffc6355b8a440106ce61d0f3.jpg" alt="">
+        </a>
+        <nav>
+            <ul class="nav-items">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="./genre.html">Genres</a></li>
+                <li><a href="#">Popular</a></li>
+            </ul>
+            <form novalidate>
+                <input type="search" id="searchInput" placeholder="Search...">
+                <ul id="suggestionsList" class="suggestions-list"></ul>
+            </form>
+            <div class="profile">
+                <div id="authButtons" class="profile-item-first" style="display: flex;">
+                    <button id="loginBtn" class="signin-button">Login</button>
+                    <button id="signupBtn" class="login-button">Signup</button>
+                </div>
+                <div class="profile-item profile-section" id="profileSection" style="display: none;">
+                    <img id="userImg" class="profile-img" width="48" height="40" src="" alt="User Image">
+                    <span id="userName" class="profile-name"></span>
+                    <div id="profileDropdown" class="dropdown-content" style="display: none;">
+                        <a href="./profile.html">Profile</a>
+                        <a href="#logoutModal" id="logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="signupForm">
+                <label class="upload-img" for="profileImage">Upload Image: <i class="fa-solid fa-upload"></i></label>
+                <input type="file" id="profileImage" accept="image/*" required>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" placeholder="Enter first name..." required>
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter username..." required>
+                <label for="password">Create Password:</label>
+                <input type="password" id="password" placeholder="Create new password..." required>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm password..." required>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="loginForm">
+                <label for="loginUsername">Username:</label>
+                <input type="text" id="loginUsername" placeholder="Enter username..." required>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" placeholder="Enter password..." required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to logout?</p>
+            <button id="confirmLogout">Yes</button>
+            <button id="cancelLogout">No</button>
+        </div>
+    </div>
+
+
+    <main class="first-main">
+        <div class="main-content">
+            <div>
+                <h1 class="main-title">The best movies</h1>
+                <p class="main-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ducimus, nisi unde
+                    dicta fugiat quae aspernatur, excepturi, in quisquam explicabo id qui magnam hic doloremque laborum!
+                    Alias a porro cum fugiatuaerat porro ipsa blanditiis. Aspernatur ut nesciunt earum blanditiis
+                    aperiam in perferendis. veritatis?</p>
+                <form>
+                    <input class="main-email" type="email" placeholder="Email Address">
+                    <button class="main-btn" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Genres</h4>
+                    <ul>
+                        <li><a href="#">Horror</a></li>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">romance</a></li>
+                        <li><a href="#">War</a></li>
+                        <li><a href="#">Comedy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Actors</h4>
+                    <ul>
+                        <li><a href="#">Dwayne Johnson</a></li>
+                        <li><a href="#">Shah Rukh Khan</a></li>
+                        <li><a href="#">robert Downey Jr</a></li>
+                        <li><a href="#">Leonardo DiCaprio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./app.js"></script>
+    <script src="./header.js"></script>
+</body>
+
+</html>

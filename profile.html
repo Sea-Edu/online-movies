@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="https://i.pinimg.com/736x/ea/8d/11/ea8d11f1ffc6355b8a440106ce61d0f3.jpg">
+</head>
+
+<body>
+   <header>
+        <a href="./index.html">
+            <img src="https://i.pinimg.com/736x/ea/8d/11/ea8d11f1ffc6355b8a440106ce61d0f3.jpg" alt="">
+        </a>
+        <nav>
+            <ul class="nav-items">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="./genre.html">Genres</a></li>
+                <li><a href="#">Popular</a></li>
+            </ul>
+            <form novalidate>
+                <input type="search" id="searchInput" placeholder="Search...">
+                <ul id="suggestionsList" class="suggestions-list"></ul>
+            </form>
+            <div class="profile">
+                <div id="authButtons" class="profile-item-first" style="display: flex;">
+                    <button id="loginBtn" class="signin-button">Login</button>
+                    <button id="signupBtn" class="login-button">Signup</button>
+                </div>
+                <div class="profile-item profile-section" id="profileSection" style="display: none;">
+                    <img id="userImg" class="profile-img" width="48" height="40" src="" alt="User Image">
+                    <span id="userName" class="profile-name"></span>
+                    <div id="profileDropdown" class="dropdown-content" style="display: none;">
+                        <a href="./profile.html">Profile</a>
+                        <a href="#logoutModal" id="logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="signupForm">
+                <label class="upload-img" for="profileImage">Upload Image: <i class="fa-solid fa-upload"></i></label>
+                <input type="file" id="profileImage" accept="image/*" required>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" placeholder="Enter first name..." required> 
+                <!-- <label for="lastName">Last Name:</label>  -->
+                <!-- <input type="text" id="lastName" placeholder="Enter last name..." required>
+                <label for="middleName">Middle Name:</label> -->
+                <!-- <input type="text" id="middleName" placeholder="Enter middle name..."> -->
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter username..." required>
+                <label for="password">Create Password:</label>
+                <input type="password" id="password" placeholder="Create new password..." required>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm password..." required>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="loginForm">
+                <label for="loginUsername">Username:</label>
+                <input type="text" id="loginUsername" placeholder="Enter username..." required>
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" placeholder="Enter password..." required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <p>Are you sure you want to logout?</p>
+            <button id="confirmLogout">Yes</button>
+            <button id="cancelLogout">No</button>
+        </div>
+    </div>
+
+
+    <main>
+        <div class="profile-container" id="profileContainer">
+            <img width="150" height="150" id="profileImageDisplay" src="" alt="Profile Image"
+                class="profile-img-content">
+            <div class="profile-details">
+                <p><strong>First Name:</strong> <span id="profileFirstName"></span></p>
+                <p><strong>Last Name:</strong> <span id="profileLastName"></span></p>
+                <p><strong>Middle Name:</strong> <span id="profileMiddleName"></span></p>
+                <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+                <button id="editProfile">Edit</button>
+            </div>
+        </div>
+
+        <div id="editProfileModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="editProfileForm">
+                    <label class="upload-img" for="profileImage">Upload Image: <i class="fa-solid fa-upload"></i></label>
+                    <input type="file" id="profileImage" accept="image/*" required>
+                    <label for="editFirstName">First Name:</label>
+                    <input type="text" id="editFirstName" required>
+                    <label for="editLastName">Last Name:</label>
+                    <input type="text" id="editLastName" required>
+                    <label for="editMiddleName">Middle Name:</label>
+                    <input type="text" id="editMiddleName">
+                    <label for="editUsername">Username:</label>
+                    <input type="text" id="editUsername" required>
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
+    
+    <script src="app.js" defer></script>
+    <script src="header.js" defer></script>
+    <script src="genre.js" defer></script>
+    
+</body>
+
+</html>
